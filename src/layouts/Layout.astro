@@ -62,43 +62,49 @@ const { title, description, canonicalURL = new URL(Astro.url.pathname, Astro.sit
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow">
+    <main class="flex-grow flex flex-col">
       <slot />
     </main>
 
     <!-- Global Footer -->
-    <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 mt-auto py-12 transition-colors duration-300">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
-        <div class="col-span-1 md:col-span-2">
-          <div class="flex items-center gap-2 mb-4">
-            <div class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs">S</div>
-            <span class="text-lg font-bold text-slate-900 dark:text-white transition-colors">SocioTool</span>
+    <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 mt-auto py-8 transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center md:items-start gap-8 text-sm">
+        
+        <div class="flex flex-col items-center md:items-start">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-5 h-5 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-[10px]">S</div>
+            <span class="text-base font-bold text-slate-900 dark:text-white transition-colors tracking-tight">SocioTool</span>
           </div>
-          <p class="text-slate-500 dark:text-slate-400 max-w-md leading-relaxed transition-colors">Free, high-performance e-commerce and marketing calculators running purely in your browser for maximum privacy and speed.</p>
+          <p class="text-slate-500 dark:text-slate-400 text-xs max-w-[220px] text-center md:text-left leading-relaxed transition-colors">Free, privacy-first unit economics & marketing calculators.</p>
         </div>
-        <div>
-          <h4 class="font-bold text-slate-900 dark:text-white mb-4 tracking-wider uppercase text-xs transition-colors">Categories</h4>
-          <ul class="space-y-2 text-slate-500 dark:text-slate-400">
-            <li><a href="#" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Marketplace Engines</a></li>
-            <li><a href="#" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Payment Gateways</a></li>
-            <li><a href="#" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Logistics & Landed Cost</a></li>
-            <li><a href="#" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Marketing Economics</a></li>
-          </ul>
+
+        <div class="flex gap-10 sm:gap-16 text-center md:text-left">
+          <div>
+            <h4 class="font-bold text-slate-900 dark:text-white mb-3 tracking-wider uppercase text-[10px] transition-colors">Tools</h4>
+            <ul class="space-y-2 text-slate-500 dark:text-slate-400 text-xs">
+              <li><a href="#" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Marketplaces</a></li>
+              <li><a href="#" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Logistics</a></li>
+              <li><a href="#" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Advertising</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900 dark:text-white mb-3 tracking-wider uppercase text-[10px] transition-colors">Company</h4>
+            <ul class="space-y-2 text-slate-500 dark:text-slate-400 text-xs">
+              <li><a href="/about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About Us</a></li>
+              <li><a href="/contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a></li>
+              <li><a href="/privacy" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Privacy</a></li>
+              <li><a href="/terms" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Terms</a></li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <h4 class="font-bold text-slate-900 dark:text-white mb-4 tracking-wider uppercase text-xs transition-colors">Sitemap</h4>
-          <ul class="space-y-2 text-slate-500 dark:text-slate-400">
-            <li><a href="/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a></li>
-            <li><a href="/about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About Us</a></li>
-            <li><a href="/contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact Us</a></li>
-            <li><a href="/privacy" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Privacy Policy</a></li>
-            <li><a href="/terms" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Terms of Service</a></li>
-            <li><a href="/sitemap-index.xml" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">XML Sitemap</a></li>
-          </ul>
-        </div>
+
       </div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 text-center text-slate-400 dark:text-slate-500 text-xs transition-colors duration-300">
-        &copy; {new Date().getFullYear()} SocioTool Network. All rights reserved.
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-400 dark:text-slate-500 text-[10px] sm:text-xs transition-colors duration-300">
+        <span>&copy; {new Date().getFullYear()} SocioTool Network. All rights reserved.</span>
+        <div class="flex gap-4">
+          <a href="/sitemap-index.xml" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Sitemap XML</a>
+        </div>
       </div>
     </footer>
   </body>
