@@ -115,6 +115,7 @@ export default function UniversalCalculator({ calculatorConfig }) {
                 ) : input.type === 'toggle' ? (
                   <div className="flex justify-between items-center">
                     <button
+                      type="button"
                       onClick={() => handleChange(input.id, state[input.id] === 1 ? 0 : 1)}
                       className={`min-h-[44px] min-w-[64px] flex items-center rounded-full p-1.5 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 ${state[input.id] ? 'bg-blue-600' : 'bg-slate-300'}`}
                     >
@@ -125,6 +126,7 @@ export default function UniversalCalculator({ calculatorConfig }) {
                 ) : (
                   <div className="relative flex items-center">
                     <button 
+                      type="button"
                       onClick={() => handleStep(input.id, input.step || 1, -1)}
                       className="absolute left-1 w-10 h-10 flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors z-10 text-xl font-bold"
                     >
@@ -140,6 +142,7 @@ export default function UniversalCalculator({ calculatorConfig }) {
                       className="w-full text-center px-12 py-2 min-h-[44px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-slate-800 font-bold placeholder-slate-400 focus:bg-white focus:outline-none text-base sm:text-lg tabular-nums"
                     />
                     <button 
+                      type="button"
                       onClick={() => handleStep(input.id, input.step || 1, 1)}
                       className="absolute right-1 w-10 h-10 flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors z-10 text-xl font-bold"
                     >
