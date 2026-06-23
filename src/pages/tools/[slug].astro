@@ -42,19 +42,19 @@ const schema = {
     {/* Top Zone: Title & Breadcrumbs */}
     <div class="mb-8 md:mb-12 text-center">
       <nav class="flex justify-center mb-4" aria-label="Breadcrumb">
-        <ol class="flex items-center space-x-2 text-xs md:text-sm text-slate-500">
-          <li><a href="/" class="hover:text-blue-600 transition-colors">Home</a></li>
+        <ol class="flex items-center space-x-2 text-xs md:text-sm text-slate-500 dark:text-slate-400 transition-colors">
+          <li><a href="/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a></li>
           <li><span class="mx-1 md:mx-2">/</span></li>
-          <li><span class="text-slate-900 font-medium line-clamp-1">{tool.title}</span></li>
+          <li><span class="text-slate-900 dark:text-white font-medium line-clamp-1 transition-colors">{tool.title}</span></li>
         </ol>
       </nav>
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-4 px-2">{tool.title}</h1>
-      <p class="text-base md:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto px-4">{tool.metaDescription}</p>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight mb-4 px-2 transition-colors">{tool.title}</h1>
+      <p class="text-base md:text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto px-4 transition-colors">{tool.metaDescription}</p>
     </div>
 
     {/* Ad Slot 1 - Top Leaderboard */}
     <div class="w-full flex justify-center py-6 md:py-8 mb-8 px-2">
-      <div class="w-full max-w-[728px] min-h-[50px] sm:min-h-[90px] bg-slate-100 border border-dashed border-slate-300 rounded flex items-center justify-center text-slate-400 text-xs sm:text-sm font-medium">
+      <div class="w-full max-w-[728px] min-h-[50px] sm:min-h-[90px] bg-slate-100 dark:bg-slate-900 border border-dashed border-slate-300 dark:border-slate-800 rounded flex items-center justify-center text-slate-400 dark:text-slate-600 text-xs sm:text-sm font-medium transition-colors">
         Advertisement Unit Placeholder
       </div>
     </div>
@@ -66,30 +66,30 @@ const schema = {
 
     {/* Ad Slot 2 - Content Interstitial */}
     <div class="w-full flex justify-center py-6 md:py-8 mb-8 px-2">
-      <div class="w-full max-w-[300px] sm:max-w-[728px] min-h-[250px] md:min-h-[280px] bg-slate-100 border border-dashed border-slate-300 rounded flex items-center justify-center text-slate-400 text-xs sm:text-sm font-medium">
+      <div class="w-full max-w-[300px] sm:max-w-[728px] min-h-[250px] md:min-h-[280px] bg-slate-100 dark:bg-slate-900 border border-dashed border-slate-300 dark:border-slate-800 rounded flex items-center justify-center text-slate-400 dark:text-slate-600 text-xs sm:text-sm font-medium transition-colors">
         Advertisement Unit Placeholder
       </div>
     </div>
 
     {/* Bottom Zone: Educational Content */}
-    <article class="prose prose-slate prose-sm md:prose-base lg:prose-lg max-w-3xl mx-auto bg-white p-6 md:p-10 lg:p-12 rounded-3xl shadow-sm border border-slate-100 mb-12 space-y-6">
-      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">{tool.educationalContent.h2_1}</h2>
-      <p class="text-slate-700 leading-relaxed">{tool.educationalContent.p_1}</p>
+    <article class="prose prose-slate dark:prose-invert prose-sm md:prose-base lg:prose-lg max-w-3xl mx-auto bg-white dark:bg-slate-900 p-6 md:p-10 lg:p-12 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 mb-12 space-y-6 transition-colors">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2">{tool.educationalContent.h2_1}</h2>
+      <p class="text-slate-700 dark:text-slate-300 leading-relaxed">{tool.educationalContent.p_1}</p>
       
-      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2 pt-4">{tool.educationalContent.h2_2}</h2>
-      <p class="text-slate-700 leading-relaxed">{tool.educationalContent.p_2}</p>
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2 pt-4">{tool.educationalContent.h2_2}</h2>
+      <p class="text-slate-700 dark:text-slate-300 leading-relaxed">{tool.educationalContent.p_2}</p>
     </article>
 
     {/* Related Calculators */}
     {relatedTools.length > 0 && (
-      <div class="mt-8 pt-12 border-t border-slate-200 w-full max-w-5xl mx-auto">
-        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 md:mb-8 text-center">Related Calculators</h3>
+      <div class="mt-8 pt-12 border-t border-slate-200 dark:border-slate-800 w-full max-w-5xl mx-auto transition-colors">
+        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-6 md:mb-8 text-center transition-colors">Related Calculators</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {relatedTools.map((relatedTool: any) => (
-            <a href={`/tools/${relatedTool.slug}`} class="group bg-white rounded-2xl border border-slate-200 p-5 md:p-6 shadow-sm hover:shadow-xl hover:border-blue-200 hover:-translate-y-1 transition-all duration-300 flex flex-col min-h-[140px]">
-              <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">{relatedTool.title}</h4>
-              <p class="text-sm text-slate-500 line-clamp-2 leading-relaxed flex-grow">{relatedTool.metaDescription}</p>
-              <div class="mt-4 flex items-center text-blue-600 font-medium text-sm">
+            <a href={`/tools/${relatedTool.slug}`} class="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 md:p-6 shadow-sm hover:shadow-xl dark:hover:shadow-2xl dark:hover:bg-slate-800/50 hover:border-blue-200 dark:hover:border-blue-800 hover:-translate-y-1 transition-all duration-300 flex flex-col min-h-[140px]">
+              <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-tight">{relatedTool.title}</h4>
+              <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed flex-grow transition-colors">{relatedTool.metaDescription}</p>
+              <div class="mt-4 flex items-center text-blue-600 dark:text-blue-400 font-medium text-sm transition-colors">
                 Open Calculator
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
