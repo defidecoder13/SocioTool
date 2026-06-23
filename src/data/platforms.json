@@ -1,0 +1,2502 @@
+[
+  {
+    "slug": "amazon-fba",
+    "title": "Amazon FBA",
+    "category": "marketplace",
+    "metaDescription": "Calculate Amazon FBA fees and profit.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Gross Revenue",
+          "type": "number",
+          "defaultValue": 100,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 20,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "shipping",
+          "label": "Shipping Cost",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "referralPercent",
+          "label": "Referral Fee (%)",
+          "type": "number",
+          "defaultValue": 15,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "id": "fbaFee",
+          "label": "FBA Fee",
+          "type": "number",
+          "defaultValue": 4,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "revenue - cogs - shipping - (revenue * (referralPercent/100)) - fbaFee"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Amazon FBA Mechanics",
+      "p_1": "Operating on the Amazon FBA platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Amazon FBA Margin Strategy",
+      "p_2": "To optimize margins within Amazon FBA, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "etsy-fee-and-profit",
+    "title": "Etsy Fee & Profit",
+    "category": "marketplace",
+    "metaDescription": "Calculate Etsy processing, transaction, and ad fees.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Item Price",
+          "type": "number",
+          "defaultValue": 50,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "shippingCharged",
+          "label": "Shipping Charged",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "shippingCost",
+          "label": "Actual Shipping Cost",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "isOffsiteAd",
+          "label": "Offsite Ad Sale?",
+          "type": "toggle",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 1,
+          "step": 1
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "const proc = (revenue + shippingCharged) * 0.03 + 0.25; const trans = (revenue + shippingCharged) * 0.065; const ad = isOffsiteAd ? (revenue * 0.12) : 0; return revenue + shippingCharged - cogs - shippingCost - 0.20 - proc - trans - ad;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Etsy Mechanics",
+      "p_1": "Operating on the Etsy platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Etsy Margin Strategy",
+      "p_2": "To optimize margins within Etsy, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "ebay-promoted-listings",
+    "title": "eBay Promoted Listings",
+    "category": "marketplace",
+    "metaDescription": "eBay seller fee and ad rate calculator.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Item Price",
+          "type": "number",
+          "defaultValue": 100,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "shippingCharged",
+          "label": "Shipping Charged",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 30,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "shippingCost",
+          "label": "Actual Shipping Cost",
+          "type": "number",
+          "defaultValue": 8,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "ebayTierPercent",
+          "label": "Category Fee (%)",
+          "type": "number",
+          "defaultValue": 13.25,
+          "min": 0,
+          "max": 100,
+          "step": 0.01
+        },
+        {
+          "id": "adRatePercent",
+          "label": "Ad Rate (%)",
+          "type": "slider",
+          "defaultValue": 2,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "const ebayFee = (revenue + shippingCharged) * (ebayTierPercent/100) + 0.30; const adFee = revenue * (adRatePercent/100); return revenue + shippingCharged - cogs - shippingCost - ebayFee - adFee;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding eBay Mechanics",
+      "p_1": "Operating on the eBay platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing eBay Margin Strategy",
+      "p_2": "To optimize margins within eBay, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "walmart-marketplace",
+    "title": "Walmart Marketplace",
+    "category": "marketplace",
+    "metaDescription": "Walmart seller fees and WFS profit calculator.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Gross Revenue",
+          "type": "number",
+          "defaultValue": 100,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 20,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "shipping",
+          "label": "Shipping",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "referralPercent",
+          "label": "Referral Percent",
+          "type": "number",
+          "defaultValue": 15,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "id": "wfsFee",
+          "label": "WFS Fee",
+          "type": "number",
+          "defaultValue": 4,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "revenue - cogs - shipping - (revenue * (referralPercent/100)) - wfsFee"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Walmart Mechanics",
+      "p_1": "Operating on the Walmart platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Walmart Margin Strategy",
+      "p_2": "To optimize margins within Walmart, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "poshmark-seller",
+    "title": "Poshmark Seller Profit",
+    "category": "marketplace",
+    "metaDescription": "Calculate Poshmark margins with tier logic.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Sale Price",
+          "type": "number",
+          "defaultValue": 30,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "const fee = revenue < 15 ? 2.95 : revenue * 0.20; return revenue - cogs - fee;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Poshmark Mechanics",
+      "p_1": "Operating on the Poshmark platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Poshmark Margin Strategy",
+      "p_2": "To optimize margins within Poshmark, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "mercari-selling",
+    "title": "Mercari Net Profit",
+    "category": "marketplace",
+    "metaDescription": "Mercari dynamic fees and cash-out cost.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Sale Price",
+          "type": "number",
+          "defaultValue": 50,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 15,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "const fee = (revenue * 0.10) + (revenue * 0.029 + 0.50) + 2.00; return revenue - cogs - fee;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Mercari Mechanics",
+      "p_1": "Operating on the Mercari platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Mercari Margin Strategy",
+      "p_2": "To optimize margins within Mercari, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "vinted-net-income",
+    "title": "Vinted Net Income",
+    "category": "marketplace",
+    "metaDescription": "Vinted seller profit calculator.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Sale Price",
+          "type": "number",
+          "defaultValue": 40,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "revenue - cogs"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Vinted Mechanics",
+      "p_1": "Operating on the Vinted platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Vinted Margin Strategy",
+      "p_2": "To optimize margins within Vinted, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "tiktok-shop-fee",
+    "title": "TikTok Shop Profit",
+    "category": "gateway",
+    "metaDescription": "TikTok shop category fees.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Revenue",
+          "type": "number",
+          "defaultValue": 50,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 15,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "shipping",
+          "label": "Shipping",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "categoryFeePercent",
+          "label": "Category Fee (%)",
+          "type": "number",
+          "defaultValue": 8,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "const fee = (revenue * (categoryFeePercent/100)) + 0.30; return revenue - cogs - shipping - fee;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding TikTok Shop Mechanics",
+      "p_1": "Operating on the TikTok Shop platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing TikTok Shop Margin Strategy",
+      "p_2": "To optimize margins within TikTok Shop, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "tiktok-shop-affiliate-split",
+    "title": "TikTok Shop Affiliate Split",
+    "category": "marketing",
+    "metaDescription": "TikTok shop affiliate margin impact.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Revenue",
+          "type": "number",
+          "defaultValue": 50,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 15,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "shipping",
+          "label": "Shipping",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "affiliatePercent",
+          "label": "Affiliate Cut (%)",
+          "type": "slider",
+          "defaultValue": 15,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "const fee = revenue * (affiliatePercent/100); return revenue - cogs - shipping - fee;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding TikTok Affiliate Mechanics",
+      "p_1": "Operating on the TikTok Affiliate platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing TikTok Affiliate Margin Strategy",
+      "p_2": "To optimize margins within TikTok Affiliate, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "instagram-shopping",
+    "title": "Instagram Shopping Fees",
+    "category": "gateway",
+    "metaDescription": "Meta commerce processing costs.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Revenue",
+          "type": "number",
+          "defaultValue": 50,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 15,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "shipping",
+          "label": "Shipping",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "const fee = (revenue * 0.029) + 0.30; return revenue - cogs - shipping - fee;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Instagram Shopping Mechanics",
+      "p_1": "Operating on the Instagram Shopping platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Instagram Shopping Margin Strategy",
+      "p_2": "To optimize margins within Instagram Shopping, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "youtube-shopping",
+    "title": "YouTube Shopping Splits",
+    "category": "marketing",
+    "metaDescription": "YouTube product tags and affiliate margins.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Revenue",
+          "type": "number",
+          "defaultValue": 100,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 40,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "shipping",
+          "label": "Shipping",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "commissionPercent",
+          "label": "Commission (%)",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "const fee = revenue * (commissionPercent/100); return revenue - cogs - shipping - fee;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding YouTube Shopping Mechanics",
+      "p_1": "Operating on the YouTube Shopping platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing YouTube Shopping Margin Strategy",
+      "p_2": "To optimize margins within YouTube Shopping, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "pinterest-buyable-pins",
+    "title": "Pinterest Buyable Pins",
+    "category": "gateway",
+    "metaDescription": "Pinterest shopping integration fees.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Revenue",
+          "type": "number",
+          "defaultValue": 50,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 15,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "shipping",
+          "label": "Shipping",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "const fee = (revenue * 0.023) + 0.30; return revenue - cogs - shipping - fee;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Pinterest Shopping Mechanics",
+      "p_1": "Operating on the Pinterest Shopping platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Pinterest Shopping Margin Strategy",
+      "p_2": "To optimize margins within Pinterest Shopping, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "stripe-fee",
+    "title": "Stripe Fee Calculator",
+    "category": "gateway",
+    "metaDescription": "Calculate standard Stripe payment fees.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Transaction Amount",
+          "type": "number",
+          "defaultValue": 100,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 2.9,
+        "flatFee": 0.3,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "revenue - ((revenue * 0.029) + 0.30)"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Stripe Mechanics",
+      "p_1": "Operating on the Stripe platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Stripe Margin Strategy",
+      "p_2": "To optimize margins within Stripe, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "paypal-merchant",
+    "title": "PayPal Merchant Fees",
+    "category": "gateway",
+    "metaDescription": "PayPal commercial transaction costs.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Transaction Amount",
+          "type": "number",
+          "defaultValue": 100,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 3.49,
+        "flatFee": 0.49,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "revenue - ((revenue * 0.0349) + 0.49)"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding PayPal Mechanics",
+      "p_1": "Operating on the PayPal platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing PayPal Margin Strategy",
+      "p_2": "To optimize margins within PayPal, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "shopify-payments",
+    "title": "Shopify Payments Processor",
+    "category": "gateway",
+    "metaDescription": "Shopify payment gateway margins.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Transaction Amount",
+          "type": "number",
+          "defaultValue": 100,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "planTier",
+          "label": "Plan Tier (1=Basic, 2=Shopify, 3=Advanced)",
+          "type": "slider",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 3,
+          "step": 1
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "const rates = {1: [0.029, 0.30], 2: [0.026, 0.30], 3: [0.024, 0.30]}; const fee = (revenue * rates[planTier][0]) + rates[planTier][1]; return revenue - fee;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Shopify Payments Mechanics",
+      "p_1": "Operating on the Shopify Payments platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Shopify Payments Margin Strategy",
+      "p_2": "To optimize margins within Shopify Payments, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "square-pos-retail",
+    "title": "Square POS Retail",
+    "category": "gateway",
+    "metaDescription": "Square face-to-face and remote fee calculator.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Transaction Amount",
+          "type": "number",
+          "defaultValue": 100,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "isKeyed",
+          "label": "Manually Keyed?",
+          "type": "toggle",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 1,
+          "step": 1
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "const percent = isKeyed ? 0.035 : 0.026; const flat = isKeyed ? 0.15 : 0.10; const fee = (revenue * percent) + flat; return revenue - fee;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Square POS Mechanics",
+      "p_1": "Operating on the Square POS platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Square POS Margin Strategy",
+      "p_2": "To optimize margins within Square POS, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "klarna-bnpl-impact",
+    "title": "Klarna BNPL Impact",
+    "category": "gateway",
+    "metaDescription": "Buy Now Pay Later merchant costs.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Transaction Amount",
+          "type": "number",
+          "defaultValue": 200,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 80,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 5.99,
+        "flatFee": 0.3,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "revenue - cogs - ((revenue * 0.0599) + 0.30)"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Klarna BNPL Mechanics",
+      "p_1": "Operating on the Klarna BNPL platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Klarna BNPL Margin Strategy",
+      "p_2": "To optimize margins within Klarna BNPL, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "afterpay-merchant",
+    "title": "Afterpay Merchant Fees",
+    "category": "gateway",
+    "metaDescription": "Afterpay merchant installment margins.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Transaction Amount",
+          "type": "number",
+          "defaultValue": 200,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 80,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 6,
+        "flatFee": 0.3,
+        "extraRules": {
+          "archetype": 1,
+          "formula": "revenue - cogs - ((revenue * 0.06) + 0.30)"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Afterpay Mechanics",
+      "p_1": "Operating on the Afterpay platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Afterpay Margin Strategy",
+      "p_2": "To optimize margins within Afterpay, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "amazon-fba-dimensional-weight",
+    "title": "FBA Dimensional Weight",
+    "category": "logistics",
+    "metaDescription": "Amazon dimensional volume vs physical weight.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "length",
+          "label": "Length (in)",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "id": "width",
+          "label": "Width (in)",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "id": "height",
+          "label": "Height (in)",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "id": "actualWeight",
+          "label": "Actual Weight (lbs)",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 500,
+          "step": 0.1
+        }
+      ],
+      "formulas": {
+        "type": "logistics_volumetric",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "metric": "billableWeight",
+          "formula": "const dimWeight = (length * width * height) / 139; return Math.max(actualWeight, dimWeight);"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding FBA Dimensional Weight Mechanics",
+      "p_1": "Operating on the FBA Dimensional Weight platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing FBA Dimensional Weight Margin Strategy",
+      "p_2": "To optimize margins within FBA Dimensional Weight, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "amazon-aged-inventory-surcharge",
+    "title": "Aged Inventory Surcharge",
+    "category": "logistics",
+    "metaDescription": "Amazon stale inventory cost calculator.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "length",
+          "label": "Length (in)",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "id": "width",
+          "label": "Width (in)",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "id": "height",
+          "label": "Height (in)",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "id": "units",
+          "label": "Units Stored",
+          "type": "number",
+          "defaultValue": 100,
+          "min": 0,
+          "max": 100000,
+          "step": 1
+        },
+        {
+          "id": "monthsAged",
+          "label": "Months Aged",
+          "type": "slider",
+          "defaultValue": 7,
+          "min": 0,
+          "max": 24,
+          "step": 1
+        }
+      ],
+      "formulas": {
+        "type": "logistics_volumetric",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "metric": "surcharge",
+          "formula": "const cubicFeet = ((length * width * height) / 1728) * units; const rate = monthsAged > 12 ? 6.90 : monthsAged > 6 ? 3.80 : 0.78; return cubicFeet * rate;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Aged Inventory Mechanics",
+      "p_1": "Operating on the Aged Inventory platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Aged Inventory Margin Strategy",
+      "p_2": "To optimize margins within Aged Inventory, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "stripe-cross-border-currency",
+    "title": "Stripe Cross Border FX",
+    "category": "gateway",
+    "metaDescription": "International payment gateway margins.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Transaction Amount",
+          "type": "number",
+          "defaultValue": 100,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "isCrossBorder",
+          "label": "Cross Border?",
+          "type": "toggle",
+          "defaultValue": 1,
+          "min": 0,
+          "max": 1,
+          "step": 1
+        },
+        {
+          "id": "needsConversion",
+          "label": "Currency Conversion?",
+          "type": "toggle",
+          "defaultValue": 1,
+          "min": 0,
+          "max": 1,
+          "step": 1
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "formula": "const rate = 0.029 + (isCrossBorder ? 0.01 : 0) + (needsConversion ? 0.01 : 0); const fee = (revenue * rate) + 0.30; return revenue - fee;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Stripe FX Mechanics",
+      "p_1": "Operating on the Stripe FX platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Stripe FX Margin Strategy",
+      "p_2": "To optimize margins within Stripe FX, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "paypal-micro-transactions",
+    "title": "PayPal Micro-Transactions",
+    "category": "gateway",
+    "metaDescription": "Compare micro vs standard PayPal rates.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Transaction Amount",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 100,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "metric": "savings",
+          "formula": "const standardFee = (revenue * 0.0349) + 0.49; const microFee = (revenue * 0.05) + 0.05; return standardFee - microFee;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding PayPal Micro Mechanics",
+      "p_1": "Operating on the PayPal Micro platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing PayPal Micro Margin Strategy",
+      "p_2": "To optimize margins within PayPal Micro, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "shopify-plan-breakeven",
+    "title": "Shopify Plan Breakeven",
+    "category": "gateway",
+    "metaDescription": "Find the optimal Shopify subscription tier.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "monthlyVolume",
+          "label": "Monthly Sales Volume ($)",
+          "type": "number",
+          "defaultValue": 5000,
+          "min": 0,
+          "max": 500000,
+          "step": 100
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "metric": "optimalPlanCost",
+          "formula": "const b = 29 + (monthlyVolume * 0.029); const s = 79 + (monthlyVolume * 0.026); const a = 299 + (monthlyVolume * 0.024); return Math.min(b, s, a);"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Shopify Breakeven Mechanics",
+      "p_1": "Operating on the Shopify Breakeven platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Shopify Breakeven Margin Strategy",
+      "p_2": "To optimize margins within Shopify Breakeven, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "aliexpress-dropshipping",
+    "title": "AliExpress Dropshipping Margin",
+    "category": "logistics",
+    "metaDescription": "Calculate arbitrage landed cost margins.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "retailPrice",
+          "label": "Selling Price",
+          "type": "number",
+          "defaultValue": 30,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "aliCost",
+          "label": "AliExpress Cost",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "aliShipping",
+          "label": "AliExpress Shipping",
+          "type": "number",
+          "defaultValue": 3,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "logistics_volumetric",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "metric": "profit",
+          "formula": "return retailPrice - aliCost - aliShipping;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding AliExpress Mechanics",
+      "p_1": "Operating on the AliExpress platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing AliExpress Margin Strategy",
+      "p_2": "To optimize margins within AliExpress, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "cjdropshipping-landed-cost",
+    "title": "CJ Dropshipping Landed Cost",
+    "category": "logistics",
+    "metaDescription": "Aggregate CJ Dropshipping fulfillment costs.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "productCost",
+          "label": "Product Cost",
+          "type": "number",
+          "defaultValue": 8,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "shippingFee",
+          "label": "Shipping Fee",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "processingFee",
+          "label": "Processing Fee",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 0,
+          "max": 1000,
+          "step": 0.01
+        },
+        {
+          "id": "packagingFee",
+          "label": "Packaging Fee",
+          "type": "number",
+          "defaultValue": 0.5,
+          "min": 0,
+          "max": 1000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "logistics_volumetric",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "metric": "landedCost",
+          "formula": "return productCost + shippingFee + processingFee + packagingFee;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding CJ Dropshipping Mechanics",
+      "p_1": "Operating on the CJ Dropshipping platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing CJ Dropshipping Margin Strategy",
+      "p_2": "To optimize margins within CJ Dropshipping, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "printful-pod",
+    "title": "Printful POD Margins",
+    "category": "logistics",
+    "metaDescription": "Print-on-demand fulfillment tracking.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "retailPrice",
+          "label": "Selling Price",
+          "type": "number",
+          "defaultValue": 25,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "printfulBaseCost",
+          "label": "Printful Cost",
+          "type": "number",
+          "defaultValue": 13,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "customShipping",
+          "label": "Custom Shipping",
+          "type": "number",
+          "defaultValue": 4,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "logistics_volumetric",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "metric": "profit",
+          "formula": "return retailPrice - printfulBaseCost - customShipping;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Printful Mechanics",
+      "p_1": "Operating on the Printful platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Printful Margin Strategy",
+      "p_2": "To optimize margins within Printful, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "printify-variant",
+    "title": "Printify Variant Routing",
+    "category": "logistics",
+    "metaDescription": "Printify production center split tracking.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "retailPrice",
+          "label": "Selling Price",
+          "type": "number",
+          "defaultValue": 25,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "printifyBase",
+          "label": "Printify Cost",
+          "type": "number",
+          "defaultValue": 12,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "routingMargin",
+          "label": "Routing Overhead (%)",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "formulas": {
+        "type": "logistics_volumetric",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "metric": "profit",
+          "formula": "return retailPrice - (printifyBase * (1 - routingMargin/100));"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Printify Mechanics",
+      "p_1": "Operating on the Printify platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Printify Margin Strategy",
+      "p_2": "To optimize margins within Printify, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "teespring-apparel",
+    "title": "Teespring Royalty",
+    "category": "logistics",
+    "metaDescription": "Simple Teespring creator royalty calculator.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "retailPrice",
+          "label": "Selling Price",
+          "type": "number",
+          "defaultValue": 28,
+          "min": 0,
+          "max": 1000,
+          "step": 0.01
+        },
+        {
+          "id": "apparelBaseCost",
+          "label": "Base Cost",
+          "type": "number",
+          "defaultValue": 15,
+          "min": 0,
+          "max": 1000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "logistics_volumetric",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "metric": "profit",
+          "formula": "return retailPrice - apparelBaseCost;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Teespring Mechanics",
+      "p_1": "Operating on the Teespring platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Teespring Margin Strategy",
+      "p_2": "To optimize margins within Teespring, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "international-hs-tariff",
+    "title": "International Duty & VAT",
+    "category": "logistics",
+    "metaDescription": "Calculate HS Code tariffs and localized VAT.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "fobValue",
+          "label": "Product Value (FOB)",
+          "type": "number",
+          "defaultValue": 1000,
+          "min": 0,
+          "max": 1000000,
+          "step": 1
+        },
+        {
+          "id": "freightCost",
+          "label": "Freight Cost",
+          "type": "number",
+          "defaultValue": 200,
+          "min": 0,
+          "max": 100000,
+          "step": 1
+        },
+        {
+          "id": "dutyPercent",
+          "label": "Import Duty (%)",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "id": "vatPercent",
+          "label": "VAT (%)",
+          "type": "number",
+          "defaultValue": 20,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "formulas": {
+        "type": "logistics_volumetric",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "metric": "totalLanded",
+          "formula": "const cifValue = fobValue + freightCost; const dutyAmount = cifValue * (dutyPercent/100); const vatAmount = (cifValue + dutyAmount) * (vatPercent/100); return cifValue + dutyAmount + vatAmount;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Import Tariffs Mechanics",
+      "p_1": "Operating on the Import Tariffs platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Import Tariffs Margin Strategy",
+      "p_2": "To optimize margins within Import Tariffs, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "ocean-container-freight-splitter",
+    "title": "Ocean Container CBM Splitter",
+    "category": "logistics",
+    "metaDescription": "Allocate sea freight costs by volumetric share.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "totalFreight",
+          "label": "Total Container Cost",
+          "type": "number",
+          "defaultValue": 3500,
+          "min": 0,
+          "max": 50000,
+          "step": 1
+        },
+        {
+          "id": "totalCBM",
+          "label": "Total Container CBM",
+          "type": "number",
+          "defaultValue": 33,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "id": "unitLength",
+          "label": "Unit Length (cm)",
+          "type": "number",
+          "defaultValue": 40,
+          "min": 0,
+          "max": 500,
+          "step": 1
+        },
+        {
+          "id": "unitWidth",
+          "label": "Unit Width (cm)",
+          "type": "number",
+          "defaultValue": 30,
+          "min": 0,
+          "max": 500,
+          "step": 1
+        },
+        {
+          "id": "unitHeight",
+          "label": "Unit Height (cm)",
+          "type": "number",
+          "defaultValue": 20,
+          "min": 0,
+          "max": 500,
+          "step": 1
+        },
+        {
+          "id": "totalUnits",
+          "label": "Total Units",
+          "type": "number",
+          "defaultValue": 500,
+          "min": 1,
+          "max": 100000,
+          "step": 1
+        }
+      ],
+      "formulas": {
+        "type": "logistics_volumetric",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "metric": "totalShare",
+          "formula": "const unitCBM = (unitLength * unitWidth * unitHeight) / 1000000; return totalFreight * ((unitCBM * totalUnits) / totalCBM);"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Ocean Freight CBM Mechanics",
+      "p_1": "Operating on the Ocean Freight CBM platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Ocean Freight CBM Margin Strategy",
+      "p_2": "To optimize margins within Ocean Freight CBM, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "air-freight-volumetric",
+    "title": "Air Freight Volumetric",
+    "category": "logistics",
+    "metaDescription": "Airway bill dimensional divisor calculations.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "length",
+          "label": "Length (cm)",
+          "type": "number",
+          "defaultValue": 50,
+          "min": 0,
+          "max": 500,
+          "step": 1
+        },
+        {
+          "id": "width",
+          "label": "Width (cm)",
+          "type": "number",
+          "defaultValue": 40,
+          "min": 0,
+          "max": 500,
+          "step": 1
+        },
+        {
+          "id": "height",
+          "label": "Height (cm)",
+          "type": "number",
+          "defaultValue": 30,
+          "min": 0,
+          "max": 500,
+          "step": 1
+        },
+        {
+          "id": "actualWeight",
+          "label": "Actual Weight (kg)",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 1000,
+          "step": 0.1
+        },
+        {
+          "id": "unitCount",
+          "label": "Unit Count",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 1,
+          "max": 10000,
+          "step": 1
+        }
+      ],
+      "formulas": {
+        "type": "logistics_volumetric",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "metric": "totalBillable",
+          "formula": "const volWeight = (length * width * height) / 5000; return Math.max(actualWeight, volWeight) * unitCount;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Air Freight Mechanics",
+      "p_1": "Operating on the Air Freight platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Air Freight Margin Strategy",
+      "p_2": "To optimize margins within Air Freight, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "3pl-warehouse-fulfillment",
+    "title": "3PL Fulfillment Overhead",
+    "category": "logistics",
+    "metaDescription": "Amortize monthly storage and pick-pack fees.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "monthlyStorage",
+          "label": "Monthly Storage ($)",
+          "type": "number",
+          "defaultValue": 500,
+          "min": 0,
+          "max": 50000,
+          "step": 1
+        },
+        {
+          "id": "totalUnitsStored",
+          "label": "Units Stored",
+          "type": "number",
+          "defaultValue": 2000,
+          "min": 1,
+          "max": 1000000,
+          "step": 1
+        },
+        {
+          "id": "pickPackFee",
+          "label": "Pick & Pack Fee ($/unit)",
+          "type": "number",
+          "defaultValue": 2.5,
+          "min": 0,
+          "max": 100,
+          "step": 0.01
+        },
+        {
+          "id": "receivingFee",
+          "label": "Total Receiving Fee ($)",
+          "type": "number",
+          "defaultValue": 100,
+          "min": 0,
+          "max": 10000,
+          "step": 1
+        },
+        {
+          "id": "unitsProcessed",
+          "label": "Units Processed (Inbound)",
+          "type": "number",
+          "defaultValue": 500,
+          "min": 1,
+          "max": 100000,
+          "step": 1
+        }
+      ],
+      "formulas": {
+        "type": "logistics_volumetric",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "metric": "perUnitCost",
+          "formula": "const amStorage = monthlyStorage / totalUnitsStored; const amRec = receivingFee / unitsProcessed; return amStorage + amRec + pickPackFee;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding 3PL Fulfillment Mechanics",
+      "p_1": "Operating on the 3PL Fulfillment platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing 3PL Fulfillment Margin Strategy",
+      "p_2": "To optimize margins within 3PL Fulfillment, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "e-commerce-returns-cost",
+    "title": "True Cost of Returns",
+    "category": "logistics",
+    "metaDescription": "Calculate financial drain of reverse logistics.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "returnRate",
+          "label": "Return Rate (%)",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 20,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "outboundShipping",
+          "label": "Outbound Shipping",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "returnShipping",
+          "label": "Return Shipping",
+          "type": "number",
+          "defaultValue": 6,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "restockLabor",
+          "label": "Restock Labor",
+          "type": "number",
+          "defaultValue": 2,
+          "min": 0,
+          "max": 1000,
+          "step": 0.01
+        },
+        {
+          "id": "resaleValue",
+          "label": "Salvage Resale Value",
+          "type": "number",
+          "defaultValue": 15,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "logistics_volumetric",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "metric": "netReturnImpact",
+          "formula": "const lossPerReturn = cogs + outboundShipping + returnShipping + restockLabor - resaleValue; return (returnRate / 100) * lossPerReturn;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding E-commerce Returns Mechanics",
+      "p_1": "Operating on the E-commerce Returns platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing E-commerce Returns Margin Strategy",
+      "p_2": "To optimize margins within E-commerce Returns, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "supplier-bulk-moq",
+    "title": "MOQ Bulk Order Savings",
+    "category": "logistics",
+    "metaDescription": "Balance MOQ savings vs inventory holding costs.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "orderQty",
+          "label": "Order Quantity",
+          "type": "number",
+          "defaultValue": 1000,
+          "min": 1,
+          "max": 1000000,
+          "step": 1
+        },
+        {
+          "id": "unitPrice",
+          "label": "Unit Price",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "holdingRatePercent",
+          "label": "Annual Holding Rate (%)",
+          "type": "number",
+          "defaultValue": 20,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "formulas": {
+        "type": "logistics_volumetric",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 2,
+          "metric": "totalCost",
+          "formula": "const purchaseCost = orderQty * unitPrice; const holdingCost = (orderQty / 2) * (unitPrice * (holdingRatePercent/100)); return purchaseCost + holdingCost;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding MOQ Sourcing Mechanics",
+      "p_1": "Operating on the MOQ Sourcing platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing MOQ Sourcing Margin Strategy",
+      "p_2": "To optimize margins within MOQ Sourcing, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "target-breakeven-roas",
+    "title": "Target Break-even ROAS",
+    "category": "marketing",
+    "metaDescription": "Find the exact ad multiplier ceiling for profit.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "retailPrice",
+          "label": "Retail Price",
+          "type": "number",
+          "defaultValue": 50,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 15,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "transactionFees",
+          "label": "Transaction Fees",
+          "type": "number",
+          "defaultValue": 2,
+          "min": 0,
+          "max": 1000,
+          "step": 0.01
+        },
+        {
+          "id": "shippingCost",
+          "label": "Shipping Cost",
+          "type": "number",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "marketing_roas",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 3,
+          "metric": "breakevenROAS",
+          "formula": "const netMargin = retailPrice - cogs - transactionFees - shippingCost; return retailPrice / netMargin;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Break-even ROAS Mechanics",
+      "p_1": "Operating on the Break-even ROAS platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Break-even ROAS Margin Strategy",
+      "p_2": "To optimize margins within Break-even ROAS, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "maximum-allowed-cpa",
+    "title": "Maximum Allowed CPA",
+    "category": "marketing",
+    "metaDescription": "Define maximum acquisition ceiling.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "retailPrice",
+          "label": "Retail Price",
+          "type": "number",
+          "defaultValue": 50,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "cogs",
+          "label": "COGS",
+          "type": "number",
+          "defaultValue": 15,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "fees",
+          "label": "Total Fees & Shipping",
+          "type": "number",
+          "defaultValue": 7,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "desiredProfit",
+          "label": "Desired Profit ($)",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "marketing_roas",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 3,
+          "metric": "maxCPA",
+          "formula": "return retailPrice - cogs - fees - desiredProfit;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Maximum CPA Mechanics",
+      "p_1": "Operating on the Maximum CPA platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Maximum CPA Margin Strategy",
+      "p_2": "To optimize margins within Maximum CPA, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "customer-lifetime-value",
+    "title": "Customer Lifetime Value",
+    "category": "marketing",
+    "metaDescription": "Measure long-term CLV profiles.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "avgOrderValue",
+          "label": "Average Order Value ($)",
+          "type": "number",
+          "defaultValue": 60,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "purchaseFrequency",
+          "label": "Purchases Per Year",
+          "type": "number",
+          "defaultValue": 2.5,
+          "min": 0,
+          "max": 1000,
+          "step": 0.1
+        },
+        {
+          "id": "lifespanYears",
+          "label": "Lifespan (Years)",
+          "type": "number",
+          "defaultValue": 3,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "id": "grossMarginPercent",
+          "label": "Gross Margin (%)",
+          "type": "number",
+          "defaultValue": 40,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "formulas": {
+        "type": "marketing_roas",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 3,
+          "metric": "clv",
+          "formula": "return avgOrderValue * purchaseFrequency * lifespanYears * (grossMarginPercent/100);"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding CLV Mechanics",
+      "p_1": "Operating on the CLV platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing CLV Margin Strategy",
+      "p_2": "To optimize margins within CLV, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "average-order-value-threshold",
+    "title": "AOV Free Shipping Threshold",
+    "category": "marketing",
+    "metaDescription": "Evaluate free shipping cart minimum lifts.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "currentAOV",
+          "label": "Current AOV ($)",
+          "type": "number",
+          "defaultValue": 45,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "freeShippingMin",
+          "label": "Proposed Free Shipping Min ($)",
+          "type": "number",
+          "defaultValue": 60,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "conversionDropPercent",
+          "label": "Conversion Drop (%)",
+          "type": "slider",
+          "defaultValue": 5,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "id": "marginPercent",
+          "label": "Gross Margin (%)",
+          "type": "number",
+          "defaultValue": 50,
+          "min": 0,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "id": "carrierCost",
+          "label": "Carrier Shipping Cost ($)",
+          "type": "number",
+          "defaultValue": 8,
+          "min": 0,
+          "max": 1000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "marketing_roas",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 3,
+          "metric": "profitLift",
+          "formula": "const currentProfit = currentAOV * (marginPercent/100); const newProfit = (freeShippingMin * (marginPercent/100) * (1 - conversionDropPercent/100)) - carrierCost; return newProfit - currentProfit;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding AOV Expansion Mechanics",
+      "p_1": "Operating on the AOV Expansion platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing AOV Expansion Margin Strategy",
+      "p_2": "To optimize margins within AOV Expansion, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "customer-acquisition-cost-payback",
+    "title": "CAC Payback Period",
+    "category": "marketing",
+    "metaDescription": "Compute CAC operational runway.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "cac",
+          "label": "Customer Acquisition Cost ($)",
+          "type": "number",
+          "defaultValue": 30,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        },
+        {
+          "id": "monthlyGrossMargin",
+          "label": "Monthly Margin Per User ($)",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "marketing_roas",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 3,
+          "metric": "paybackMonths",
+          "formula": "return cac / monthlyGrossMargin;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding CAC Payback Mechanics",
+      "p_1": "Operating on the CAC Payback platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing CAC Payback Margin Strategy",
+      "p_2": "To optimize margins within CAC Payback, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "ubereats-merchant",
+    "title": "UberEats Merchant Cut",
+    "category": "marketing",
+    "metaDescription": "UberEats payout configurations.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "orderValue",
+          "label": "Order Value ($)",
+          "type": "number",
+          "defaultValue": 40,
+          "min": 0,
+          "max": 1000,
+          "step": 0.01
+        },
+        {
+          "id": "deliveryType",
+          "label": "Delivery Type (1=Market, 0=Self)",
+          "type": "toggle",
+          "defaultValue": 1,
+          "min": 0,
+          "max": 1,
+          "step": 1
+        }
+      ],
+      "formulas": {
+        "type": "marketing_roas",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 3,
+          "metric": "payout",
+          "formula": "const rate = deliveryType ? 0.30 : 0.15; return orderValue * (1 - rate);"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding UberEats Mechanics",
+      "p_1": "Operating on the UberEats platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing UberEats Margin Strategy",
+      "p_2": "To optimize margins within UberEats, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "doordash-storefront",
+    "title": "DoorDash Storefront Tiers",
+    "category": "marketing",
+    "metaDescription": "DoorDash merchant plans.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "orderValue",
+          "label": "Order Value ($)",
+          "type": "number",
+          "defaultValue": 40,
+          "min": 0,
+          "max": 1000,
+          "step": 0.01
+        },
+        {
+          "id": "planType",
+          "label": "Plan Tier (1=Basic, 2=Plus, 3=Premier)",
+          "type": "slider",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 3,
+          "step": 1
+        }
+      ],
+      "formulas": {
+        "type": "marketing_roas",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 3,
+          "metric": "payout",
+          "formula": "const rates = {1: 0.15, 2: 0.25, 3: 0.30}; return orderValue * (1 - rates[planType]);"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding DoorDash Mechanics",
+      "p_1": "Operating on the DoorDash platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing DoorDash Margin Strategy",
+      "p_2": "To optimize margins within DoorDash, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "instacart-grocer",
+    "title": "Instacart Grocer Margins",
+    "category": "marketing",
+    "metaDescription": "Instacart listing markup simulator.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "wholesaleCost",
+          "label": "Wholesale Cost ($)",
+          "type": "number",
+          "defaultValue": 10,
+          "min": 0,
+          "max": 1000,
+          "step": 0.01
+        },
+        {
+          "id": "storeMarkupPercent",
+          "label": "In-App Markup (%)",
+          "type": "slider",
+          "defaultValue": 20,
+          "min": 0,
+          "max": 200,
+          "step": 1
+        }
+      ],
+      "formulas": {
+        "type": "marketing_roas",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 3,
+          "metric": "netStoreReturn",
+          "formula": "const listed = wholesaleCost * (1 + storeMarkupPercent/100); const comm = listed * 0.10; return listed - comm;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Instacart Mechanics",
+      "p_1": "Operating on the Instacart platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Instacart Margin Strategy",
+      "p_2": "To optimize margins within Instacart, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "stripe-fee-us",
+    "title": "Stripe US Processing",
+    "category": "gateway",
+    "metaDescription": "Stripe fee calculator for US merchants.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Transaction Amount",
+          "type": "number",
+          "defaultValue": 100,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 2.9,
+        "flatFee": 0.3,
+        "extraRules": {
+          "archetype": 4,
+          "symbol": "$",
+          "formula": "revenue - ((revenue * 0.029) + 0.30)"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Stripe US Mechanics",
+      "p_1": "Operating on the Stripe US platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Stripe US Margin Strategy",
+      "p_2": "To optimize margins within Stripe US, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "stripe-fee-uk",
+    "title": "Stripe UK Processing",
+    "category": "gateway",
+    "metaDescription": "Stripe fee calculator for UK merchants.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Transaction Amount",
+          "type": "number",
+          "defaultValue": 100,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 1.5,
+        "flatFee": 0.2,
+        "extraRules": {
+          "archetype": 4,
+          "symbol": "£",
+          "formula": "revenue - ((revenue * 0.015) + 0.20)"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Stripe UK Mechanics",
+      "p_1": "Operating on the Stripe UK platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Stripe UK Margin Strategy",
+      "p_2": "To optimize margins within Stripe UK, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "stripe-fee-canada",
+    "title": "Stripe Canada Processing",
+    "category": "gateway",
+    "metaDescription": "Stripe fee calculator for Canadian merchants.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Transaction Amount",
+          "type": "number",
+          "defaultValue": 100,
+          "min": 0,
+          "max": 10000,
+          "step": 0.01
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 2.9,
+        "flatFee": 0.3,
+        "extraRules": {
+          "archetype": 4,
+          "symbol": "$",
+          "formula": "revenue - ((revenue * 0.029) + 0.30)"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding Stripe Canada Mechanics",
+      "p_1": "Operating on the Stripe Canada platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing Stripe Canada Margin Strategy",
+      "p_2": "To optimize margins within Stripe Canada, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "paypal-fee-india",
+    "title": "PayPal India",
+    "category": "gateway",
+    "metaDescription": "PayPal fee calculator for Indian merchants.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "revenue",
+          "label": "Transaction Amount",
+          "type": "number",
+          "defaultValue": 1000,
+          "min": 0,
+          "max": 100000,
+          "step": 1
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 4.4,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 4,
+          "symbol": "₹",
+          "formula": "revenue - (revenue * 0.044)"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding PayPal India Mechanics",
+      "p_1": "Operating on the PayPal India platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing PayPal India Margin Strategy",
+      "p_2": "To optimize margins within PayPal India, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  },
+  {
+    "slug": "vat-margin-germany",
+    "title": "Germany VAT Extractor",
+    "category": "gateway",
+    "metaDescription": "Separate product revenue from German VAT liabilities.",
+    "calculatorConfig": {
+      "inputs": [
+        {
+          "id": "grossAmount",
+          "label": "Gross Amount",
+          "type": "number",
+          "defaultValue": 119,
+          "min": 0,
+          "max": 100000,
+          "step": 0.01
+        },
+        {
+          "id": "isReducedRate",
+          "label": "Reduced Rate (7%)?",
+          "type": "toggle",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 1,
+          "step": 1
+        }
+      ],
+      "formulas": {
+        "type": "percentage_flat",
+        "basePercentage": 0,
+        "flatFee": 0,
+        "extraRules": {
+          "archetype": 4,
+          "metric": "netAmount",
+          "symbol": "€",
+          "formula": "const vatRate = isReducedRate ? 7.0 : 19.0; const net = grossAmount / (1 + (vatRate / 100)); return net;"
+        }
+      }
+    },
+    "educationalContent": {
+      "h2_1": "Understanding German VAT Mechanics",
+      "p_1": "Operating on the German VAT platform requires a deep understanding of its fee structure to maintain profitability. Like many digital commerce solutions, it utilizes a combination of percentage-based commissions and fixed transaction fees. Sellers must accurately account for cost of goods sold, shipping, and any marketing overhead to calculate true net margins. Failure to track these granular metrics often leads to scaled losses. By modeling these costs precisely, merchants can determine optimal pricing strategies, set profitable baseline metrics, and scale their operations with confidence, knowing their unit economics are structurally sound.",
+      "h2_2": "Optimizing German VAT Margin Strategy",
+      "p_2": "To optimize margins within German VAT, consider strategies that either increase average order value or reduce variable costs. Small adjustments to retail pricing can have disproportionate impacts on bottom-line profitability when fees are percentage-based. Additionally, streamlining logistics and reducing product acquisition costs will directly improve the net return per unit sold. Implementing tiered pricing, bundling items, or negotiating better rates with suppliers are proven methods to widen the profit gap. It is essential to continuously revisit these calculations as platform policies and market conditions evolve to ensure long-term sustainability."
+    }
+  }
+]

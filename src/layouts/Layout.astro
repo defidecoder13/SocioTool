@@ -1,23 +1,91 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL?: URL | string;
+}
+
+const { title, description, canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://example.com") } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-inter antialiased">
+    <!-- Global Navbar -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 group">
+          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold transform group-hover:rotate-12 transition-transform shadow-md">S</div>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">SocioTool</span>
+        </a>
+        <nav class="hidden md:flex space-x-8">
+          <a href="/" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">All Tools</a>
+          <a href="#" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Marketplaces</a>
+          <a href="#" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Logistics</a>
+        </nav>
+      </div>
+    </header>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+    <!-- Main Content -->
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-auto py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+        <div class="col-span-1 md:col-span-2">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs">S</div>
+            <span class="text-lg font-bold text-slate-900">SocioTool</span>
+          </div>
+          <p class="text-slate-500 max-w-md leading-relaxed">Free, high-performance e-commerce and marketing calculators running purely in your browser for maximum privacy and speed.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-900 mb-4 tracking-wider uppercase text-xs">Categories</h4>
+          <ul class="space-y-2 text-slate-500">
+            <li><a href="#" class="hover:text-blue-600 transition-colors">Marketplace Engines</a></li>
+            <li><a href="#" class="hover:text-blue-600 transition-colors">Payment Gateways</a></li>
+            <li><a href="#" class="hover:text-blue-600 transition-colors">Logistics & Landed Cost</a></li>
+            <li><a href="#" class="hover:text-blue-600 transition-colors">Marketing Economics</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-900 mb-4 tracking-wider uppercase text-xs">Sitemap</h4>
+          <ul class="space-y-2 text-slate-500">
+            <li><a href="/" class="hover:text-blue-600 transition-colors">Home</a></li>
+            <li><a href="/sitemap-index.xml" class="hover:text-blue-600 transition-colors">XML Sitemap</a></li>
+            <li><a href="#" class="hover:text-blue-600 transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-blue-600 transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-100 text-center text-slate-400 text-xs">
+        &copy; {new Date().getFullYear()} SocioTool Network. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
