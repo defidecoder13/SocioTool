@@ -90,7 +90,7 @@ export default function UniversalCalculator({ calculatorConfig }) {
         {/* Input Controls */}
         <div className="space-y-6 flex flex-col justify-center overflow-x-hidden">
           <h3 className="text-xl md:text-2xl font-semibold text-slate-800 mb-2 font-inter tracking-tight">Parameters</h3>
-          <div className="space-y-5">
+          <div className="space-y-5 w-full max-w-md mx-auto lg:mx-0">
             {inputs.map((input) => (
               <div key={input.id} className="relative flex flex-col">
                 <div className="flex justify-between mb-2 items-end">
