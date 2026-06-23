@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact Us | SocioTool" description="Get in touch with the SocioTool team for support, feature requests, or business inquiries.">
+  <main class="w-full max-w-3xl mx-auto px-6 py-12 md:py-20 overflow-x-hidden flex flex-col items-center justify-center min-h-[60vh]">
+    <div class="text-center mb-10">
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight transition-colors">Get in Touch</h1>
+      <p class="text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-lg mx-auto transition-colors">
+        Have a feature request, found a bug, or just want to talk unit economics? We'd love to hear from you.
+      </p>
+    </div>
+
+    <div class="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl shadow-xl shadow-blue-900/5 p-8 md:p-10 text-center relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-blue-900/10 dark:hover:shadow-blue-500/5">
+      {/* Subtle background glow */}
+      <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2 group-hover:bg-blue-500/10 transition-colors duration-500"></div>
+      <div class="absolute bottom-0 left-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl transform -translate-x-1/2 translate-y-1/2 group-hover:bg-indigo-500/10 transition-colors duration-500"></div>
+      
+      <div class="relative z-10 flex flex-col items-center">
+        <div class="w-16 h-16 bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mb-6 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2 transition-colors">Support & Inquiries</h2>
+        <p class="text-slate-500 dark:text-slate-400 text-sm mb-8 transition-colors">We typically respond within 24 hours.</p>
+        
+        <a 
+          href="mailto:hello@sociotool.network" 
+          class="inline-flex items-center justify-center w-full px-6 py-4 text-base font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 transform hover:-translate-y-0.5"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          hello@sociotool.network
+        </a>
+        
+        <button 
+          id="copy-email-btn"
+          class="mt-4 text-sm font-medium text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white transition-colors flex items-center justify-center focus:outline-none focus-visible:underline"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+          <span id="copy-email-text">Copy Email Address</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const copyBtn = document.getElementById('copy-email-btn');
+    const copyText = document.getElementById('copy-email-text');
+    
+    if (copyBtn && copyText) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText('hello@sociotool.network');
+          copyText.textContent = 'Copied!';
+          copyText.classList.add('text-green-600', 'dark:text-green-400');
+          
+          setTimeout(() => {
+            copyText.textContent = 'Copy Email Address';
+            copyText.classList.remove('text-green-600', 'dark:text-green-400');
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy email:', err);
+        }
+      });
+    }
+  </script>
+</Layout>
