@@ -94,7 +94,7 @@ export default function UniversalCalculator({ calculatorConfig }) {
             {inputs.map((input) => (
               <div key={input.id} className="relative flex flex-col">
                 <div className="flex justify-between mb-2 items-end">
-                  <label className="text-sm md:text-base font-medium text-slate-600 tracking-wide">{input.label}</label>
+                  <label htmlFor={input.id} className="text-sm md:text-base font-medium text-slate-600 tracking-wide">{input.label}</label>
                 </div>
                 
                 {input.type === 'slider' ? (
@@ -104,20 +104,27 @@ export default function UniversalCalculator({ calculatorConfig }) {
                     </div>
                     <input
                       type="range"
+                      id={input.id}
+                      name={input.id}
+                      aria-label={input.label}
                       min={input.min}
                       max={input.max}
                       step={input.step}
                       value={state[input.id]}
                       onChange={(e) => handleChange(input.id, e.target.value)}
-                      className="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 transition-all hover:accent-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
+                      className="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 transition-all hover:accent-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/30"
                     />
                   </div>
                 ) : input.type === 'toggle' ? (
                   <div className="flex justify-between items-center">
                     <button
                       type="button"
+                      id={input.id}
+                      role="switch"
+                      aria-checked={!!state[input.id]}
+                      aria-label={input.label}
                       onClick={() => handleChange(input.id, state[input.id] === 1 ? 0 : 1)}
-                      className={`min-h-[44px] min-w-[64px] flex items-center rounded-full p-1.5 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 ${state[input.id] ? 'bg-blue-600' : 'bg-slate-300'}`}
+                      className={`min-h-[44px] min-w-[64px] flex items-center rounded-full p-1.5 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 ${state[input.id] ? 'bg-blue-600' : 'bg-slate-300'}`}
                     >
                       <div className={`bg-white w-6 h-6 rounded-full shadow-md transform transition-transform duration-300 ${state[input.id] ? 'translate-x-6' : 'translate-x-0'}`} />
                     </button>
@@ -127,24 +134,28 @@ export default function UniversalCalculator({ calculatorConfig }) {
                   <div className="relative flex items-center">
                     <button 
                       type="button"
+                      aria-label={`Decrease ${input.label}`}
                       onClick={() => handleStep(input.id, input.step || 1, -1)}
-                      className="absolute left-1 w-10 h-10 flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors z-10 text-xl font-bold"
+                      className="absolute left-1 w-10 h-10 flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors z-10 text-xl font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                     >
                       -
                     </button>
                     <input
                       type="number"
+                      id={input.id}
+                      name={input.id}
                       min={input.min}
                       max={input.max}
                       step={input.step}
                       value={state[input.id]}
                       onChange={(e) => handleChange(input.id, e.target.value)}
-                      className="w-full text-center px-12 py-2 min-h-[44px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-slate-800 font-bold placeholder-slate-400 focus:bg-white focus:outline-none text-base sm:text-lg tabular-nums"
+                      className="w-full text-center px-12 py-2 min-h-[44px] bg-slate-50 border border-slate-200 rounded-xl focus-visible:ring-2 focus-visible:ring-blue-500 focus:border-blue-500 transition-all text-slate-800 font-bold placeholder-slate-400 focus:bg-white focus:outline-none text-base sm:text-lg tabular-nums"
                     />
                     <button 
                       type="button"
+                      aria-label={`Increase ${input.label}`}
                       onClick={() => handleStep(input.id, input.step || 1, 1)}
-                      className="absolute right-1 w-10 h-10 flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors z-10 text-xl font-bold"
+                      className="absolute right-1 w-10 h-10 flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors z-10 text-xl font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                     >
                       +
                     </button>
